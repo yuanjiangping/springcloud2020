@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
+/**
+ * @author yuanjiangping
+ */
 @RestController
 @Slf4j
 public class PaymentController {
@@ -34,7 +37,7 @@ public class PaymentController {
     @GetMapping(value = "payment/get/{id}")
     public CommonResult getPaymentById(@PathVariable("id") Long id) {
         Payment payment = paymentService.getPaymentById(id);
-        log.info("***************插入结果" + payment);
+        log.info("***************查询结果" + payment);
         if (payment!=null){
             return new CommonResult(200,"查询成功",payment);
         }else {
